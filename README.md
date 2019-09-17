@@ -1,0 +1,2 @@
+# DEVFEST-REGISTRATION
+Static Website
