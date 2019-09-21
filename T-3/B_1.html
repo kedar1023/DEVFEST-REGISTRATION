@@ -1,0 +1,251 @@
+<html>
+    <head>
+        <title>Registration</title>
+
+    </head>
+    <style>
+    .Form2
+    {   margin-top: 50px;
+        box-shadow: 0px 10p white;
+        border: 2px solid black;
+        background-color:aliceblue; 
+        padding: 40px;
+        width: 600px;
+        border-radius: 40px;
+        
+        
+    }
+
+    
+
+    form{
+        margin-left: 20px;
+    }
+    body
+    {
+
+        background:black;
+    }
+    .topnavigation {
+        margin-top: 50px;
+       
+        box-shadow: 0px 10p white;
+        border: 2px solid black;
+        background-color:aliceblue; 
+        padding: 10px;
+        width: 600px;
+
+         
+        border-radius: 40px;
+         
+        text-decoration-color:white;   
+    
+    }
+    .a
+    {
+        box-sizing: border-box;
+    }
+    
+    
+    </style>
+    
+    <script>
+        function check1()
+        {   error_msg="following errors :"
+            var n=document.getElementById("name").value
+            if (n.length <6 || n.length >12 )
+                {   
+                    error_msg+="Length Should be grater thn 6 and less than 12 \n"
+                    
+                }
+            
+             var ema=document.getElementById("mail").value
+             v=ema.indexOf("@")
+             if (v<6)
+             {
+                   error_msg+="Error Email: username length should be greater than 6"
+                    
+             }
+             
+             if (ema == " ")
+             {
+                
+             }
+             else if(v<0)
+             {
+                     error_msg+="Error Email: @ Symbol must be include\n"
+             }
+             else if( ema.indexOf(".",0)<0)
+             {
+                    error_msg+="Error Email:(.) Symbol must be include\n"
+             }
+
+               
+             var genders=document.getElementsByName('Gender')
+             if (genders[0].checked == true) {
+                    
+                } 
+             else if (genders[1].checked == true)
+              {
+                   
+                } 
+                else if(genders[2].checked == true)
+                {
+                }
+              else
+              {
+                                        error_msg+="Please Select the Gender \n"
+                
+              }
+              
+              var mob=document.getElementById("num").value
+              if ( mob.length<10 || mob.length >10)
+              {
+                  error_msg+="Mobile Number should be Correct \n"
+              
+              }
+              else if(mob==" ")
+              {
+                  error_msg+="Mobile Number should be Correct \n"
+                    
+              }
+              
+              var select = document.getElementById('select');
+              if (select.value==" " ) 
+              {}
+               else
+               {
+                                      error_msg+="At least Select one Option \n"
+                    
+                
+               }
+              
+              
+                
+            
+            
+            if (error_msg !="following errors :")
+                {   
+                    alert(error_msg);
+                }
+            else
+            {
+                alert('all fields are correct')
+            }
+            
+        }
+    </script>
+
+<body>
+        
+<center>
+<div class="topnavigation">
+    <h3>Registration Form</h3>
+
+
+</div>
+<div class="Form2">
+    
+    
+         <form  onsubmit="check1()" >
+                <table border="0" >
+
+                    <tr>
+                        <td>Name:</td>
+                        <td> <input type="text" id="name"></td>
+                        
+                        
+                    </tr>
+                    <tr>  
+                        <td><br>Address:</td>
+                        
+                        <td><br><textarea></textarea></td>
+                    </tr>
+                    <tr>  
+                        <td>Choose Your <br>Gender:</td>
+                        <td>
+                            <br>
+                            <input type="radio" name="Gender">Male:<br>
+                            <input type="radio" name="Gender">Female<br>
+                            <input type="radio" name="Gender" >Other
+                        </td>
+                    </tr>
+                      <tr>
+                          <td><br>Choose Your<br> BirthDate:</td>
+                          <td><br><input type="date"></td>
+                      
+                      </tr>
+      
+                      <tr>
+                          <td><br>Choose Your <br> Qualification: </td>
+                          <td><br>
+                              <select  id="select">
+                                  <option > Choose Here</option>
+                                  <option value=" ">SSC</option>
+                                  <option value=" "> Diploma*</option>
+                                  <option value=" ">B-TECH</option>
+                                  <option value=" ">M-TECH</option>
+      
+                              </select>
+                          </td>
+      
+                      </tr>
+                      
+                      <tr>
+      
+                              <td><br> Email:</td>
+                              <td><br><input type="text" id="mail"></td>
+          
+                      
+                      
+                      <tr>
+      
+                          <td><br> Contact Number:</td>
+                          <td><br><input type="tel" id="num"></td>
+      
+                      </tr>
+      
+      
+                      <tr>
+      
+                              <td><br> Comments:</td>
+                              <td><br><textarea></textarea></td>
+          
+                      </tr>
+                      <tr>
+                              <td><br>Contribution Towards</td>
+                              <td> <br>                      
+                                   <input type="checkbox" >App Developement <br>
+                                   <input type="checkbox"> Web-Developement<br>
+                                   <input type="checkbox"> Other<br>
+                                   
+                              </td>
+      
+                      </tr>
+                      <tr>
+      
+                          
+                              <td><br>Attach Photo:</td>
+                               <td><br><input type="button" value="Attach Photo"></td>
+           
+                       </tr>
+                       
+                      <tr>
+                              <td><br><input type="reset"></td>
+                              <td><br><input type="submit" value="Submit">
+
+      
+      
+                      </tr>
+                          
+                </table>
+                  
+              </form>
+
+
+
+            </center>
+</body>
+
+
+</html>

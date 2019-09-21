@@ -1,0 +1,192 @@
+<html>
+	<head>
+		<title>Calculator</title>
+	</head>
+	
+	<style>
+	    html {
+        background: #100a1c;
+        background-image:radial-gradient(100% 30% ellipse at center top, #201e40 0%, rgba(0,0,0,0) 100%);
+        background-attachment: fixed;
+        color: #6cacc5;
+        }       
+        body {
+        color: #6cacc5;
+        font-size :100px 4%;
+        margin: 0;
+        
+        text-align: center;
+        }
+        
+	    .main
+	    {
+	        display:block;
+            margin:100px;	        
+	        border:10px solid;
+	        width:50%;
+	        height:70%;
+            	        
+	    }
+	    .inputs
+	    {
+	       margin:20px;
+
+	       width:40%;
+	    }
+	    .Screen
+	    {
+	    
+	        margin:20px;
+                    font-size :350% ;
+            color:white;
+	        width:40%;
+	        height:100px;
+	        border:10px black solid;
+	        
+	    }
+	    
+        button {
+                
+                border-radius:100px;
+                background: rgba(42,50,113, .28);
+                color: #6cacc5;
+                cursor: pointer;
+                border:1px aqua;
+                margin: 2.1%;
+                width: 25%;
+                height: 10%;
+
+
+               }
+         .inputs
+         {
+                margin:5%;
+            
+         }
+	    .inputs1
+	    {
+	        margin:1px;
+	    }
+	    
+	    .inputs2
+	    {
+	        margin:0px;
+	    }
+	    
+	    
+	</style>
+	
+	
+	<center>
+	<body>
+	    <h1> Simple  Calculator</h1>
+	    <div class="main" align="center">
+	        <div class ="Screen" id="Sc">
+	               
+	        </div>
+	        <div class="inputs"> 
+	         <Button onclick="display(this.value)" value='1'> 1</Button> 
+	         <Button onclick="display(this.value)" value='2'> 2</Button> 
+	         <Button onclick="display(this.value)" value='3'>3</Button>
+	         <div class="inputs1">
+	         <Button onclick="display(this.value)" value='4'>4</Button> 
+	         <Button onclick="display(this.value)" value='5'> 5 </Button> 
+	         <Button onclick="display(this.value)" value='6'>  6 </Button>
+             </div>
+             <div class="inputs2">
+	          
+	         <Button onclick="display(this.value)" value='7'>7</Button> 
+	         <Button onclick="display(this.value)" value='8'> 8 </Button> 
+	         <Button onclick="display(this.value)" value='9'>  9 </Button>
+             </div> 
+             <div class="inputs2">
+             <Button onclick="display(this.value)" value='+'>  +</Button>
+	         <Button onclick="display(this.value)" value='/'>/</Button> 
+	         <Button onclick="display(this.value)" value='*'>  *</Button>
+             </div> 
+             <div style="margin:10px">
+             <button onclick="displayans()"> =</button>
+             <button onclick="removeone()"> back </button>
+             <button onclick="clear1()"> AC </button>
+             </div>  
+	         </div>   
+	    <div>
+	    
+	 <script>
+	
+	function display(n)
+	{
+	    
+         
+        
+	    document.getElementById("Sc").innerHTML+= n;
+	   
+        
+	    
+	 }
+	 
+    function displayans()
+	{
+	    
+         
+        
+       var ans=document.getElementById("Sc").innerHTML;
+       
+
+       
+       ans=ans.trim();  
+       
+       
+       for (var i=0 ;i <ans.length;i++ )
+       {
+            if (ans[i]=="+")
+            {   
+                X=parseInt(ans['0'])
+                Y=parseInt(ans['2'])
+                ans=X+Y
+                document.getElementById("Sc").innerHTML=ans
+            }
+            else if (ans[i]=="*")
+            {   
+                X=parseInt(ans['0'])
+                Y=parseInt(ans['2'])
+                ans=X *Y
+                 
+                document.getElementById("Sc").innerHTML=ans
+             }
+             else if (ans[i]=="/")
+            {   
+                X=parseInt(ans['0'])
+                Y=parseInt(ans['2'])
+                ans=parseFloat(X / Y)
+                 
+                document.getElementById("Sc").innerHTML=ans
+             }            
+
+       }
+       
+            
+       
+	   document.getElementById("Sc").innerHTML=ans
+        
+	    
+	 }	
+	 
+	 function clear1()
+	 {
+	                cls="0"
+	        	   document.getElementById("Sc").innerHTML=cls
+	    
+	 }
+	 function removeone()
+	 {                            
+	                	        	   b=document.getElementById("Sc").innerHTML  
+	                	        	   
+	                                   document.getElementById('Sc').innerHTML=b.substr(0,b.length -1)
+	                              
+	    
+	 }
+	</script>
+	</body>
+	</center>
+</html>

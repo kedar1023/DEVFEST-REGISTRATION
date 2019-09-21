@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Live Clock</title>
+	</head>
+	<style>
+	   
+	    .main1
+	    {
+	        border:10px solid;
+	        height:100%;
+	        
+	    }
+	    .cs
+	    {
+	        margin:10%; 
+	        border:10px solid;
+	        height:100px;
+	        text-align:center;
+	        width:30%;
+	        margin-left:30%;    
+	        font-size:100px;
+	        
+	    }
+	    
+	            
+	</style>
+	
+	
+
+	<body>
+	    <div class="main1 " id="main">
+		    <div class="cs " id="cs" align='center' text-color='white' > 
+            
+		
+		    </div>
+		</div>
+	</body>
+	<script>
+	    var div=document.getElementById("main")
+	    function clo()
+	    {
+	    var dt=new Date();
+	    H=dt.getHours();
+	    M=dt.getMinutes();
+	    S=dt.getSeconds();
+	    
+	    if (S!==" ")
+	    {
+	        	        doc=document.getElementById("cs")
+	                    
+	    
+	        
+	        
+	    }
+	    if (H<10)
+	        {
+	            H="0"+H
+	        }
+	    if (M<10)
+	        {
+	            M="0"+M
+	        }
+	    if (S<10)
+	        {
+	            S="0"+S
+	        }
+	    t= H+":" + M +":"+S;
+	    document.getElementById("cs").innerHTML= t;
+
+        
+        
+
+	    }
+	    
+	    function back()
+	    {   
+            var letters='01233456789ABCDF';
+            var color='#'
+            for (var i=0 ;i<6; i++)
+            {
+                color+= letters[Math.floor(Math.random() * 16)];
+
+                
+            }
+            return color;
+
+            
+            
+            
+	    }
+	    function changeColor()
+	    {
+	        div.style.backgroundColor=back()
+	        
+	    }
+
+	    setInterval(clo,1000);
+	    setInterval(changeColor,1000);
+	    
+
+	</script>
+</html>
